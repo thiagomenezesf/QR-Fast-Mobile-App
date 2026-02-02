@@ -34,7 +34,7 @@ export default function EventDetailsScreen() {
     };
 
     return (
-        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
             {/* Banner */}
             <Image source={{ uri: event.banner }} style={styles.banner} />
 
@@ -93,7 +93,7 @@ export default function EventDetailsScreen() {
                     </LinearGradient>
                 </TouchableOpacity>
             </LinearGradient>
-        </ScrollView>
+        </View>
     );
 }
 
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     },
     banner: {
         width: '100%',
-        height: '41%',
+        height: '30%',
     },
     content: {
         padding: 20,
