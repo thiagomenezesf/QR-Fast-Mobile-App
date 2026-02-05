@@ -2,7 +2,7 @@ import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useState } from "react";
-import { RootStackParamList } from '../navigation/AppNavigator';
+import { RootStackParamList } from '../types/RootStackParamList';
 import { useNavigation } from "@react-navigation/native";
 
 interface Props {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     button: {
         borderRadius: 10,
         paddingVertical: 20,
-        paddingHorizontal: 90,
+        paddingHorizontal: 50,
         borderWidth: 1,
         borderColor: 'black',
         alignContent: 'center',

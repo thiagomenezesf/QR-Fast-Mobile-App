@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Appearance, useColorScheme } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../navigation/AppNavigator';
+import { RootStackParamList } from '../../types/RootStackParamList';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
@@ -29,9 +29,9 @@ export default function AdmScreen() {
             />
 
             <Button
-                rota="Tickets"
-                titulo="🎟️ Ingressos"
-                subtitulo="QR Codes gerados"
+                rota="Dashboard"
+                titulo="📊 Dashboard"
+                subtitulo="Acompanhe as estatísticas"
             />
 
             <TouchableOpacity onPressOut={() => setIsPressedQR(false)} onPressIn={() => setIsPressedQR(true)} onPress={() => navigation.navigate('Scanner')}>
