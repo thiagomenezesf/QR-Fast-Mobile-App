@@ -27,7 +27,7 @@ export default function AppNavigator() {
           <Stack.Screen name="Administração" component={Admin.AdmScreen} />
           <Stack.Screen name="Pessoas" component={Admin.PeopleListScreen} />
           <Stack.Screen name="PessoaDetalhes" component={Admin.PersonDetailScreen} />
-          <Stack.Screen name="Tickets" component={Admin.TicketsScreen} />
+          <Stack.Screen name="Dashboard" component={Admin.DashboardScreen} />
           <Stack.Screen name="Scanner" component={Admin.ScannerScreen} />
         </Stack.Group>
 

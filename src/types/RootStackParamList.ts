@@ -22,6 +22,6 @@ export type RootStackParamList = {
   Administração: undefined;
   Pessoas: undefined;
   PessoaDetalhes: { personId: string };
-  Tickets: undefined;
+  Dashboard: undefined;
   Scanner: undefined;
 };

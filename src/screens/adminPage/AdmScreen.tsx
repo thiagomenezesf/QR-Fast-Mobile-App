@@ -29,9 +29,9 @@ export default function AdmScreen() {
             />
 
             <Button
-                rota="Tickets"
-                titulo="🎟️ Ingressos"
-                subtitulo="QR Codes gerados"
+                rota="Dashboard"
+                titulo="📊 Dashboard"
+                subtitulo="Acompanhe as estatísticas"
             />
 
             <TouchableOpacity onPressOut={() => setIsPressedQR(false)} onPressIn={() => setIsPressedQR(true)} onPress={() => navigation.navigate('Scanner')}>
