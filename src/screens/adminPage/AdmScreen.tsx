@@ -4,6 +4,7 @@ import { RootStackParamList } from '../../navigation/AppNavigator';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
+import Button from '../../components/Button';
 
 type NavProps = NativeStackNavigationProp<RootStackParamList, 'Administração'>;
 
@@ -13,8 +14,7 @@ export default function AdmScreen() {
 
     const navigation = useNavigation<NavProps>();
 
-    const [isPressedPeople, setIsPressedPeople] = useState(false);
-    const [isPressedTicket, setIsPressedTicket] = useState(false);
+
     const [isPressedQR, setIsPressedQR] = useState(false);
 
     return (
@@ -22,53 +22,36 @@ export default function AdmScreen() {
             <Text style={styles.title}>QR Fast</Text>
             <Text style={styles.subtitle}>Controle de entradas</Text>
 
-            
-                <TouchableOpacity onPressOut={() => setIsPressedPeople(false)} onPressIn={() => setIsPressedPeople(true)} onPress={() => navigation.navigate('Pessoas')}>
-                    <LinearGradient 
-                    // Tons de amarelo/dourado para efeito de brilho
-                    colors={['#b2d3bc', '#bed1c4', '#99b19f', '#b2d3bc']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 1 }}
-                    style={isPressedPeople ? styles.buttonPressed : styles.button}
-                    >
-                        <Text style={styles.cardTitle}>👥 Pessoas</Text>
-                        <Text style={styles.cardSubtitle}>Cadastrar e gerenciar</Text>  
-                    </LinearGradient>
-                </TouchableOpacity>
+            <Button
+                rota="Pessoas"
+                titulo="👥 Pessoas"
+                subtitulo="Cadastrar e gerenciar"
+            />
 
-                <TouchableOpacity onPressOut={() => setIsPressedTicket(false)} onPressIn={() => setIsPressedTicket(true)} onPress={() => navigation.navigate('Tickets')}>
-                    <LinearGradient 
-                    // Tons de amarelo/dourado para efeito de brilho
-                    colors={['#b2d3bc', '#bed1c4', '#99b19f', '#b2d3bc']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 1 }}
-                    style={isPressedTicket ? styles.buttonPressed : styles.button}
-                    >
-                        <Text style={styles.cardTitle}>🎟️ Ingressos</Text>
-                        <Text style={styles.cardSubtitle}> QR Codes gerados</Text>  
-                    </LinearGradient>          
-                </TouchableOpacity>
+            <Button
+                rota="Tickets"
+                titulo="🎟️ Ingressos"
+                subtitulo="QR Codes gerados"
+            />
 
-                <TouchableOpacity onPressOut={() => setIsPressedQR(false)} onPressIn={() => setIsPressedQR(true)} onPress={() => navigation.navigate('Scanner')}>
-                    <LinearGradient 
-                  // Tons de amarelo/dourado para efeito de brilho
+            <TouchableOpacity onPressOut={() => setIsPressedQR(false)} onPressIn={() => setIsPressedQR(true)} onPress={() => navigation.navigate('Scanner')}>
+                <LinearGradient
                     colors={['#3BB85E', '#376b4d', '#0A7D27']}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
                     style={isPressedQR ? styles.buttonQRPressed : styles.buttonQR}
-                    >
-                        <Text style={styles.cardTitle}>📷 Ler QR Code</Text>
-                        <Text style={styles.cardSubtitle}>Entrada no evento</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
-  
-            {/* <TouchableOpacity onPress={() => navigation.navigate('Login')}>Trocar</TouchableOpacity> */}
+                >
+                    <Text style={styles.cardTitle}>📷 Ler QR Code</Text>
+                    <Text style={styles.cardSubtitle}>Entrada no evento</Text>
+                </LinearGradient>
+            </TouchableOpacity>
+
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
@@ -76,48 +59,20 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    textAlign: 'center',
+        fontSize: 32,
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
     subtitle: {
         textAlign: 'center',
-        marginBottom: 32,
+        marginBottom: '20%',
         color: '#666',
-    },
-    button: {
-        borderRadius: 10,
-        paddingVertical: 20,
-        paddingHorizontal: 90,
-        borderWidth: 1,
-        borderColor: 'black',
-        alignContent: 'center',
-        shadowColor: '#030303',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 15,
-        marginBottom: 14,
-        minWidth: 320,
-    },
-    buttonPressed: {
-        borderRadius: 10,
-        paddingVertical: 20,
-        paddingHorizontal: 90,
-        borderWidth: 1,
-        borderColor: 'black',
-        alignContent: 'center',
-        shadowColor: '#030303',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 15,
-        marginBottom: 14,
-        minWidth: 360,    
     },
     buttonQR: {
         backgroundColor: '#a16d6d',
         borderRadius: 10,
-        paddingVertical: 50,
-        paddingHorizontal: 90,
+        paddingVertical: '20%',
+        paddingHorizontal: '20%',
         borderWidth: 1,
         borderColor: 'black',
         alignContent: 'center',
@@ -125,8 +80,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.9,
         shadowRadius: 20,
-        marginBottom: 14,
-        marginTop: 30,
+        marginTop: '18%',
         minWidth: 320,
     },
     buttonQRPressed: {
@@ -148,13 +102,14 @@ const styles = StyleSheet.create({
     cardTitle: {
         color: 'white',
         fontWeight: 'bold',
-        paddingBottom: 8,
-        fontSize: 18,
+        paddingBottom: '4%',
+        fontSize: 22,
         textAlign: 'center'
     },
     cardSubtitle: {
         color: 'white',
         fontStyle: 'italic',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: 16,
     },
 });

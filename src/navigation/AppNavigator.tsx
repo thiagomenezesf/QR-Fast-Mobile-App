@@ -14,6 +14,8 @@ import EventDetailScreen from '../screens/userPage/EventDetailScreen';
 import UserEventsScreen from '../screens/userPage/UserEventsScreen';
 import BuyTicketScreen from '../screens/userPage/BuyTicketScreen';
 import BuyConfirmationScreen from '../screens/userPage/BuyConfirmationScreen';
+import UserScreen from '../screens/userPage/UserScreen';
+import PurchasedTicketsScreen from '../screens/userPage/PurchasedTicketsScreen';
 
 export type RootStackParamList = {
   UserPage: undefined;
@@ -28,6 +30,8 @@ export type RootStackParamList = {
   DetalhesEventos: { eventId: string };
   ComprarIngresso: { event: Event };
   ConfirmarCompra: { event: Event, quantity: number, total: number };
+  UserPageNew: undefined;
+  IngressosComprados: undefined;
 };
 
 const Stack = createNativeStackNavigator();
@@ -48,6 +52,8 @@ export default function AppNavigator() {
         <Stack.Screen name="DetalhesEventos" component={EventDetailScreen} />
         <Stack.Screen name="ComprarIngresso" component={BuyTicketScreen} />
         <Stack.Screen name="ConfirmarCompra" component={BuyConfirmationScreen} />
+        <Stack.Screen name="UserPageNew" component={UserScreen} />
+        <Stack.Screen name="IngressosComprados" component={PurchasedTicketsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

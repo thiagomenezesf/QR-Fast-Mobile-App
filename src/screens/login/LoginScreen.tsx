@@ -18,12 +18,12 @@ export default function LoginScreen() {
   const validaLogin = () => {
     const emailValido = /\S+@\S+\.\S+/.test(email);
 
-    if (email === "atleticaif" && senha === "linguica") {
+    if (email === "adm" && senha === "adm") {
       navigation.navigate('Administração');
       return;
     }
     if (email === "a" && senha === "a") {
-      navigation.navigate('UserPage');
+      navigation.navigate('UserPageNew');
       return;
     }
     if (!email || !senha) {

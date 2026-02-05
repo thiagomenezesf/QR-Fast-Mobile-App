@@ -11,8 +11,19 @@ export default function RecuperarSenhaScreen() {
       
     const navigation = useNavigation<NavProps>();
     return (
-        <View>
-            <Text>AAAAA</Text>
+        <View style={styles.container}>
+            <Text style={styles.default}>Esta tela está em manutenção!</Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        textAlign: 'center',
+    },
+    default: {
+        fontSize: 30,
+    }
+});
