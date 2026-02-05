@@ -3,11 +3,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../types/RootStackParamList';
+import { RootStackParamList } from '../../navigation/AppNavigator';
 
-type NavProps = NativeStackNavigationProp<RootStackParamList, 'UserPage'>;
+type NavProps = NativeStackNavigationProp<RootStackParamList, 'IngressosComprados'>;
 
-export default function UserEventsScreen() {
+export default function PurchasedTicketsScreen() {
   
   const navigation = useNavigation<NavProps>();
 
