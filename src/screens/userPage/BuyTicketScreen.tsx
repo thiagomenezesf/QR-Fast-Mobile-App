@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
-import { RootStackParamList } from "../../navigation/AppNavigator";
+import { RootStackParamList } from '../../types/RootStackParamList';
 
 type NavProps = NativeStackNavigationProp<RootStackParamList, 'ComprarIngresso'>;
 
